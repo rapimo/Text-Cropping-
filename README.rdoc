@@ -1,0 +1,46 @@
+=== a Text Croping Monkey Path
+
+If you have a system with articles you often want a teaser giving a small introduction.
+But if you simple cut the text after lets say 300 letters you mostly cut mid-sentence.
+Given a Range you can cut your text returning a string within the ranges length at full sentences.
+
+
+=== Features
+
+* Splits at ? ! .
+* respects abbreviations
+* find sentences ending on special chars like " )
+
+
+=== Usage
+
+* returns an array of sentences
+    string.split_sentence
+* return a cropped text within the range given length
+   string.crop(range)
+where range is a range between 0 and string.size
+* checks whether the string looks like a full sentence
+    string.is_full_sentence?
+
+
+=== Example
+
+string ="This is an example text. With some sentence. (Look at the tests for more.)"
+string.split_sentence # ["This is an example text.","With some sentence.","(Look at the tests for more.)"]
+string.crop(20..50) # "This is an example text. With some sentence."
+"This is an example text.".is_full_sentence? # true
+"This is an example".is_full_sentence? # false
+
+
+=== License
+
+Copyright (c) 2010 by Manuel Kniep. All rights reserved.
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.
