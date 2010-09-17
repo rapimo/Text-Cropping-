@@ -26,9 +26,13 @@ where range is a range between 0 and string.size
 === Example
 
 string ="This is an example text. With some sentence. (Look at the tests for more.)"
+
 string.split_sentence # ["This is an example text.","With some sentence.","(Look at the tests for more.)"]
+
 string.crop(20..50) # "This is an example text. With some sentence."
+
 "This is an example text.".is_full_sentence? # true
+
 "This is an example".is_full_sentence? # false
 
 
